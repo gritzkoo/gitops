@@ -35,7 +35,7 @@ metadata:
 spec:
   generators:
     - git:
-        file:
+        files:
           - path: apps/br/**/live-values.yaml
         repoURL: https://github.com/gritzkoo/gitops.git
         requeueAfterSeconds: 20
@@ -47,50 +47,50 @@ spec:
             project: br-live
             source:
               repoURL: ""
-              chart: '{{ helm.chart }}'
+              chart: "{{ helm.chart }}"
               helm:
                 valueFiles:
                   - values.yaml
                 values: |-
-                    {{ helm.values }}
-    - git:
-        file:
-          - path: apps/br/**/qa-values.yaml
-        repoURL: https://github.com/gritzkoo/gitops.git
-        requeueAfterSeconds: 20
-        revision: ""
-        template:
-          metadata: {}
-          spec:
-            destination: {}
-            project: br-qa
-            source:
-              repoURL: ""
-              chart: '{{ helm.chart }}'
-              helm:
-                valueFiles:
-                  - values.yaml
-                values: |-
-                    {{ helm.values }}
-    - git:
-        file:
-          - path: apps/br/**/stg-values.yaml
-        repoURL: https://github.com/gritzkoo/gitops.git
-        requeueAfterSeconds: 20
-        revision: ""
-        template:
-          metadata: {}
-          spec:
-            destination: {}
-            project: br-stg
-            source:
-              repoURL: ""
-              chart: '{{ helm.chart }}'
-              helm:
-                valueFiles:
-                  - values.yaml
-                values: |-
-                    {{ helm.values }}
+                  {{ helm.values }}
+    # - git:
+    #     file:
+    #       - path: apps/br/**/qa-values.yaml
+    #     repoURL: https://github.com/gritzkoo/gitops.git
+    #     requeueAfterSeconds: 20
+    #     revision: ""
+    #     template:
+    #       metadata: {}
+    #       spec:
+    #         destination: {}
+    #         project: br-qa
+    #         source:
+    #           repoURL: ""
+    #           chart: '{{ helm.chart }}'
+    #           helm:
+    #             valueFiles:
+    #               - values.yaml
+    #             values: |-
+    #                 {{ helm.values }}
+    # - git:
+    #     file:
+    #       - path: apps/br/**/stg-values.yaml
+    #     repoURL: https://github.com/gritzkoo/gitops.git
+    #     requeueAfterSeconds: 20
+    #     revision: ""
+    #     template:
+    #       metadata: {}
+    #       spec:
+    #         destination: {}
+    #         project: br-stg
+    #         source:
+    #           repoURL: ""
+    #           chart: '{{ helm.chart }}'
+    #           helm:
+    #             valueFiles:
+    #               - values.yaml
+    #             values: |-
+    #                 {{ helm.values }}
   # - git:
   #     files:
   #     - path: apps/**/apps/config.json
