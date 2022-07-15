@@ -1,7 +1,7 @@
 appName: nginx
 userGivenName: nginx
 destNamespace: nginx
-destServer: null
+destServer: https://kubernetes.default.svc
 srcPath: null
 srcRepoURL: https://devxp-tech.github.io/helm-charts
 srcTargetRevision: 0.1.0
