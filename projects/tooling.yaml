@@ -34,39 +34,6 @@ metadata:
   namespace: argocd
 spec:
   generators:
-  # to include configs using github as source
-  - git:
-      files:
-      - path: tooling/**/github.yaml
-      repoURL: https://github.com/gritzkoo/gitops.git
-      requeueAfterSeconds: 20
-      revision: ""
-      template:
-        metadata: {}
-        spec:
-          destination: {}
-          project: ""
-          source:
-            repoURL: ""
-  # to include apps of apps loader
-  - git:
-      files:
-      - path: tooling/**/directory.yaml
-      repoURL: https://github.com/gritzkoo/gitops.git
-      requeueAfterSeconds: 20
-      revision: ""
-      template:
-        metadata: {}
-        spec:
-          destination: {}
-          project: ""
-          source:
-            directory:
-              exclude: '{{ exclude }}'
-              include: '{{ include }}'
-              jsonnet: {}
-              recurse: true
-            repoURL: ""
   # to include helm based apps
   - git:
       files:
