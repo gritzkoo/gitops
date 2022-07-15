@@ -7,6 +7,6 @@ srcRepoURL: "https://charts.jetstack.io"
 srcTargetRevision: "1.5.3"
 labels: null
 helm:
-  name: cert-manager
+  chart: cert-manager
   values: |-
       installCRDs: true

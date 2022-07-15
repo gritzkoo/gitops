@@ -81,10 +81,10 @@ spec:
           destination: {}
           project: ""
           source:
-            chart: {{ helm.name }}
+            chart: '{{ helm.chart }}'
             helm:
               values: |-
-                {{ helm.values }}
+                '{{ helm.values }}'
   syncPolicy: {}
   template:
     metadata:
