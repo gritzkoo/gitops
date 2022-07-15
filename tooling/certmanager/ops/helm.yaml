@@ -1,10 +1,10 @@
 appName: cert-manager
 userGivenName: cert-manager
 destNamespace: cert-manager
-destServer: "https://kubernetes.default.svc"
+destServer: https://kubernetes.default.svc
 srcPath: null
-srcRepoURL: "https://charts.jetstack.io"
-srcTargetRevision: "1.5.3"
+srcRepoURL: https://charts.jetstack.io
+srcTargetRevision: 1.5.3
 labels: null
 helm:
   chart: cert-manager
