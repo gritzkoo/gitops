@@ -77,8 +77,6 @@ spec:
       template:
         metadata: 
           tooling-{{userGivenName}}
-        labels: 
-          {{ labels }}
         spec:
           destination: {}
           project: ""

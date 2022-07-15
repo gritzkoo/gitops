@@ -2,7 +2,7 @@ appName: cert-manager
 userGivenName: cert-manager
 destNamespace: cert-manager
 destServer: https://kubernetes.default.svc
-labels: {}
+labels: null
 helm:
   repository: https://charts.jetstack.io
   name: cert-manager
