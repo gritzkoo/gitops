@@ -36,7 +36,7 @@ spec:
   generators:
     - git:
         file:
-          - path: apps/**/live-values.yaml
+          - path: apps/br/**/live-values.yaml
         repoURL: https://github.com/gritzkoo/gitops.git
         requeueAfterSeconds: 20
         revision: ""
@@ -45,6 +45,44 @@ spec:
           spec:
             destination: {}
             project: br-live
+            source:
+              repoURL: ""
+              helm:
+                chart: '{{ helm.chart }}'
+                valueFiles:
+                  - values.yaml
+                values: |-
+                    {{ helm.values }}
+    - git:
+        file:
+          - path: apps/br/**/qa-values.yaml
+        repoURL: https://github.com/gritzkoo/gitops.git
+        requeueAfterSeconds: 20
+        revision: ""
+        template:
+          metadata: {}
+          spec:
+            destination: {}
+            project: br-qa
+            source:
+              repoURL: ""
+              helm:
+                chart: '{{ helm.chart }}'
+                valueFiles:
+                  - values.yaml
+                values: |-
+                    {{ helm.values }}
+    - git:
+        file:
+          - path: apps/br/**/stg-values.yaml
+        repoURL: https://github.com/gritzkoo/gitops.git
+        requeueAfterSeconds: 20
+        revision: ""
+        template:
+          metadata: {}
+          spec:
+            destination: {}
+            project: br-stg
             source:
               repoURL: ""
               helm:
