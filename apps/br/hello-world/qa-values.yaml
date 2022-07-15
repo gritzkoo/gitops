@@ -1,0 +1,10 @@
+appName: nginx
+userGivenName: nginx
+destNamespace: nginx
+srcPath: null
+srcRepoURL: https://devxp-tech.github.io/helm-charts
+srcTargetRevision: 0.1.0
+helm:
+  chart: example
+  values: |-
+      fullnameOverride: test-chart

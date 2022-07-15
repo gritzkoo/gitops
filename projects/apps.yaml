@@ -10,17 +10,17 @@ metadata:
   namespace: argocd
 spec:
   clusterResourceWhitelist:
-  - group: '*'
-    kind: '*'
+    - group: "*"
+      kind: "*"
   description: apps project
   destinations:
-  - namespace: '*'
-    server: '*'
+    - namespace: "*"
+      server: "*"
   namespaceResourceWhitelist:
-  - group: '*'
-    kind: '*'
+    - group: "*"
+      kind: "*"
   sourceRepos:
-  - '*'
+    - "*"
 status: {}
 
 ---
@@ -34,59 +34,79 @@ metadata:
   namespace: argocd
 spec:
   generators:
-  - git:
-      files:
-      - path: apps/**/apps/config.json
-      repoURL: https://github.com/gritzkoo/gitops.git
-      requeueAfterSeconds: 20
-      revision: ""
-      template:
-        metadata: {}
-        spec:
-          destination: {}
-          project: ""
-          source:
-            repoURL: ""
-  - git:
-      files:
-      - path: apps/**/apps/config_dir.json
-      repoURL: https://github.com/gritzkoo/gitops.git
-      requeueAfterSeconds: 20
-      revision: ""
-      template:
-        metadata: {}
-        spec:
-          destination: {}
-          project: ""
-          source:
-            directory:
-              exclude: '{{ exclude }}'
-              include: '{{ include }}'
-              jsonnet: {}
-              recurse: true
-            repoURL: ""
+    - git:
+        file:
+          - path: apps/**/live-values.yaml
+        repoURL: https://github.com/gritzkoo/gitops.git
+        requeueAfterSeconds: 20
+        revision: ""
+        template:
+          metadata: {}
+          spec:
+            destination: {}
+            project: br-live
+            source:
+              repoURL: ""
+              helm:
+                chart: {{ helm.chart }}
+                valueFiles:
+                  - values.yaml
+                values: |-
+                    {{ helm.values }}
+  # - git:
+  #     files:
+  #     - path: apps/**/apps/config.json
+  #     repoURL: https://github.com/gritzkoo/gitops.git
+  #     requeueAfterSeconds: 20
+  #     revision: ""
+  #     template:
+  #       metadata: {}
+  #       spec:
+  #         destination: {}
+  #         project: ""
+  #         source:
+  #           repoURL: ""
+  # - git:
+  #     files:
+  #     - path: apps/**/apps/config_dir.json
+  #     repoURL: https://github.com/gritzkoo/gitops.git
+  #     requeueAfterSeconds: 20
+  #     revision: ""
+  #     template:
+  #       metadata: {}
+  #       spec:
+  #         destination: {}
+  #         project: ""
+  #         source:
+  #           directory:
+  #             exclude: '{{ exclude }}'
+  #             include: '{{ include }}'
+  #             jsonnet: {}
+  #             recurse: true
+  #           repoURL: ""
+
   syncPolicy: {}
   template:
     metadata:
       labels:
         app.kubernetes.io/managed-by: argocd-autopilot
-        app.kubernetes.io/name: '{{ appName }}'
+        app.kubernetes.io/name: "{{ appName }}"
       name: apps-{{ userGivenName }}
       namespace: argocd
     spec:
       destination:
-        namespace: '{{ destNamespace }}'
-        server: '{{ destServer }}'
+        namespace: "{{ destNamespace }}"
+        server: "{{ destServer }}"
       ignoreDifferences:
-      - group: argoproj.io
-        jsonPointers:
-        - /status
-        kind: Application
+        - group: argoproj.io
+          jsonPointers:
+            - /status
+          kind: Application
       project: apps
       source:
-        path: '{{ srcPath }}'
-        repoURL: '{{ srcRepoURL }}'
-        targetRevision: '{{ srcTargetRevision }}'
+        path: "{{ srcPath }}"
+        repoURL: "{{ srcRepoURL }}"
+        targetRevision: "{{ srcTargetRevision }}"
       syncPolicy:
         automated:
           allowEmpty: true
