@@ -82,8 +82,8 @@ spec:
           project: ""
           source:
             repoURL: '{{ helm.repository }}'
-            targetRevision: {{ helm.version }}
-            chart: {{ helm.name }}
+            targetRevision: '{{ helm.version }}'
+            chart: '{{ helm.name }}'
             helm:
               values: |-
                 {{ helm.values }}
