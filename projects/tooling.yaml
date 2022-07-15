@@ -81,7 +81,7 @@ spec:
           destination: {}
           project: ""
           source:
-            repoURL: {{ helm.repository }}
+            repoURL: '{{ helm.repository }}'
             targetRevision: {{ helm.version }}
             chart: {{ helm.name }}
             helm:
