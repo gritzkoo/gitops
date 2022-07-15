@@ -150,4 +150,5 @@ spec:
           allowEmpty: true
           prune: true
           selfHeal: true
+          autoCreateNamespace: true
 status: {}
