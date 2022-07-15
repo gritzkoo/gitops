@@ -66,8 +66,8 @@ spec:
             project: br-qa
             source:
               repoURL: ""
+              chart: '{{ helm.chart }}'
               helm:
-                chart: '{{ helm.chart }}'
                 valueFiles:
                   - values.yaml
                 values: |-
@@ -85,8 +85,8 @@ spec:
             project: br-stg
             source:
               repoURL: ""
+              chart: '{{ helm.chart }}'
               helm:
-                chart: '{{ helm.chart }}'
                 valueFiles:
                   - values.yaml
                 values: |-
