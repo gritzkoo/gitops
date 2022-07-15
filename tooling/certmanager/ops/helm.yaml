@@ -1,0 +1,11 @@
+appName: cert-manager
+userGivenName: cert-manager
+destNamespace: cert-manager
+destServer: https://kubernetes.default.svc
+labels: null
+helm:
+  repository: https://charts.jetstack.io
+  name: cert-manager
+  version: 1.5.3
+  values: |-
+      installCRDs: true
