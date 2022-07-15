@@ -48,7 +48,7 @@ spec:
             source:
               repoURL: ""
               helm:
-                chart: {{ helm.chart }}
+                chart: '{{ helm.chart }}'
                 valueFiles:
                   - values.yaml
                 values: |-
