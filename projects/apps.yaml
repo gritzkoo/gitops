@@ -47,8 +47,8 @@ spec:
             project: br-live
             source:
               repoURL: ""
+              chart: '{{ helm.chart }}'
               helm:
-                chart: '{{ helm.chart }}'
                 valueFiles:
                   - values.yaml
                 values: |-
