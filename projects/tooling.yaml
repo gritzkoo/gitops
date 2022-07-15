@@ -84,7 +84,7 @@ spec:
             chart: '{{ helm.chart }}'
             helm:
               values: |-
-                '{{ helm.values }}'
+                  {{ helm.values }}
   syncPolicy: {}
   template:
     metadata:
