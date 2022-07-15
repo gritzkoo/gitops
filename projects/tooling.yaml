@@ -81,7 +81,7 @@ spec:
           destination: {}
           project: ""
           source:
-            chart: '{{ helm.name }}'
+            chart: {{ helm.name }}
             helm:
               values: |-
                 {{ helm.values }}
