@@ -44,7 +44,7 @@ spec:
           metadata: {}
           spec:
             destination: {}
-            project: br-live
+            project: ""
             source:
               repoURL: ""
               chart: "{{ helm.chart }}"
