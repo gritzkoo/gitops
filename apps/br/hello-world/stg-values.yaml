@@ -9,3 +9,4 @@ helm:
   chart: example
   values: |-
       fullnameOverride: test-chart
+      namespace: nginx-stg
