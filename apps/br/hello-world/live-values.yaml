@@ -1,11 +1,12 @@
 appName: nginx-live
 userGivenName: nginx-live
-destNamespace: nginx-live
+destNamespace: nginx-live-new
 destServer: https://kubernetes.default.svc
 srcPath: null
-srcRepoURL: https://devxp-tech.github.io/helm-charts
-srcTargetRevision: 0.1.0
+srcRepoURL: https://gritzkoo.github.io/helm-charts
+srcTargetRevision: 0.1.1
 helm:
   chart: example
   values: |-
       fullnameOverride: test-chart
+      namespace: nginx-live-new
