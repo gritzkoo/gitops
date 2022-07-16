@@ -12,7 +12,7 @@ spec:
   clusterResourceWhitelist:
     - group: "*"
       kind: "*"
-  description: apps project
+  description: br-apps project
   destinations:
     - namespace: "*"
       server: "*"
