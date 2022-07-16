@@ -53,25 +53,25 @@ spec:
                   - values.yaml
                 values: |-
                   {{ helm.values }}
-    # - git:
-    #     file:
-    #       - path: apps/br/**/qa-values.yaml
-    #     repoURL: https://github.com/gritzkoo/gitops.git
-    #     requeueAfterSeconds: 20
-    #     revision: ""
-    #     template:
-    #       metadata: {}
-    #       spec:
-    #         destination: {}
-    #         project: br-qa
-    #         source:
-    #           repoURL: ""
-    #           chart: '{{ helm.chart }}'
-    #           helm:
-    #             valueFiles:
-    #               - values.yaml
-    #             values: |-
-    #                 {{ helm.values }}
+    - git:
+        file:
+          - path: apps/br/**/qa-values.yaml
+        repoURL: https://github.com/gritzkoo/gitops.git
+        requeueAfterSeconds: 20
+        revision: ""
+        template:
+          metadata: {}
+          spec:
+            destination: {}
+            project: ""
+            source:
+              repoURL: ""
+              chart: "{{ helm.chart }}"
+              helm:
+                valueFiles:
+                  - values.yaml
+                values: |-
+                  {{ helm.values }}
     # - git:
     #     file:
     #       - path: apps/br/**/stg-values.yaml

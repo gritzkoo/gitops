@@ -1,10 +1,12 @@
-appName: nginx-qa
-userGivenName: nginx-qa
-destNamespace: nginx-qa
+appName: apache
+userGivenName: apache
+destNamespace: apache
 srcPath: null
-srcRepoURL: https://devxp-tech.github.io/helm-charts
-srcTargetRevision: 0.1.0
+srcRepoURL: https://gritzkoo.github.io/helm-charts
+srcTargetRevision: 0.1.1
 helm:
   chart: example
   values: |-
       fullnameOverride: test-chart
+      image:
+        repository: httpd:alpine3.16
