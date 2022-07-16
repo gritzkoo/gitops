@@ -46,7 +46,7 @@ spec:
             # destination: {}
             # project: ""
             source:
-              # repoURL: ""
+              repoURL: {{ srcRepoURL }}
               chart: "{{ helm.chart }}"
               helm:
                 valueFiles:
