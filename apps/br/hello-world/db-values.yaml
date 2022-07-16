@@ -4,7 +4,7 @@ destNamespace: mysql-live
 destServer: https://kubernetes.default.svc
 srcPath: null
 srcRepoURL: https://gritzkoo.github.io/helm-charts
-srcTargetRevision: 0.1.1
+srcTargetRevision: 0.1.2
 helm:
   chart: example
   values: |-
@@ -18,6 +18,4 @@ helm:
         value: root
       - name: MYSQL_DATABASE
         value: testing
-
-
-
+    probes: {}
