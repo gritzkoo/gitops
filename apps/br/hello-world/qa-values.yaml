@@ -1,6 +1,7 @@
 appName: apache
 userGivenName: apache
-destNamespace: apache-qa
+destNamespace: apache-new
+destServer: https://kubernetes.default.svc
 srcPath: null
 srcRepoURL: https://gritzkoo.github.io/helm-charts
 srcTargetRevision: 0.1.1
@@ -8,6 +9,7 @@ helm:
   chart: example
   values: |-
       fullnameOverride: test-chart
-      namespace: apache-qa
+      namespace: apache-new
       image:
-        repository: httpd:alpine3.16
+        repository: httpd
+        tag: "alpine3.16"
