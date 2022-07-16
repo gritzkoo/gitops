@@ -1,0 +1,23 @@
+appName: mysql-live
+userGivenName: mysql-live
+destNamespace: mysql-live
+destServer: https://kubernetes.default.svc
+srcPath: null
+srcRepoURL: https://gritzkoo.github.io/helm-charts
+srcTargetRevision: 0.1.1
+helm:
+  chart: example
+  values: |-
+    fullnameOverride: test-chart
+    namespace: mysql-live-new
+    image:
+      repository: mysql
+      tag: "8.0.29"
+    environments:
+      - name: MYSQL_ROOT_PASSWORD
+        value: root
+      - name: MYSQL_DATABASE
+        values: testing
+
+
+
