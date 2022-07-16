@@ -59,7 +59,7 @@ spec:
       labels:
         app.kubernetes.io/managed-by: argocd-autopilot
         app.kubernetes.io/name: "{{ appName }}"
-      name: apps-{{ userGivenName }}
+      name: br-apps-{{ userGivenName }}
       namespace: argocd
     spec:
       destination:
