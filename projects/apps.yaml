@@ -46,9 +46,8 @@ spec:
             destination: {}
             project: ""
             source:
-              repoURL: "{{ srcRepoURL }}"
+              repoURL: ""
               chart: "{{ helm.chart }}"
-              targetRevision: "{{ srcTargetRevision }}"
               helm:
                 valueFiles:
                   - values.yaml
