@@ -18,4 +18,4 @@ helm:
         value: root
       - name: MYSQL_DATABASE
         value: testing
-    probes: {}
+    probes: null
