@@ -1,6 +1,6 @@
 appName: apache
 userGivenName: apache
-destNamespace: apache
+destNamespace: apache-qa
 srcPath: null
 srcRepoURL: https://gritzkoo.github.io/helm-charts
 srcTargetRevision: 0.1.1
@@ -8,5 +8,6 @@ helm:
   chart: example
   values: |-
       fullnameOverride: test-chart
+      namespace: apache-qa
       image:
         repository: httpd:alpine3.16
