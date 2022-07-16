@@ -41,12 +41,12 @@ spec:
         requeueAfterSeconds: 20
         revision: ""
         template:
-          metadata: {}
+          # metadata: {}
           spec:
-            destination: {}
-            project: ""
+            # destination: {}
+            # project: ""
             source:
-              repoURL: ""
+              # repoURL: ""
               chart: "{{ helm.chart }}"
               helm:
                 valueFiles:
