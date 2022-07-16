@@ -8,8 +8,8 @@ srcTargetRevision: 0.1.1
 helm:
   chart: example
   values: |-
-      fullnameOverride: test-chart
-      namespace: apache-new
-      image:
-        repository: httpd
-        tag: "alpine3.16"
+    fullnameOverride: test-chart
+    namespace: apache-new
+    image:
+      repository: httpd
+      tag: "alpine3.16"

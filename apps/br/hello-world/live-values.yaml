@@ -8,5 +8,5 @@ srcTargetRevision: 0.1.1
 helm:
   chart: example
   values: |-
-      fullnameOverride: test-chart
-      namespace: nginx-live-new
+    fullnameOverride: test-chart
+    namespace: nginx-live-new
