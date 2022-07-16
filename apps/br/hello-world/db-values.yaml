@@ -17,7 +17,7 @@ helm:
       - name: MYSQL_ROOT_PASSWORD
         value: root
       - name: MYSQL_DATABASE
-        values: testing
+        value: testing
 
 
 
