@@ -9,7 +9,7 @@ helm:
   chart: example
   values: |-
     fullnameOverride: test-chart
-    namespace: mysql-live-new
+    namespace: mysql-live
     image:
       repository: mysql
       tag: "8.0.29"
