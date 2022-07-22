@@ -3,8 +3,8 @@
     "userGivenName": "istio",
     "destNamespace": "istio-system",
     "destServer": "https://kubernetes.default.svc",
-    "srcPath": "apps/istio/overlays/tooling",
-    "srcRepoURL": "https://github.com/alanyoshida/homelab-argocd.git",
+    "srcPath": "tooling/istio/overlays/ops",
+    "srcRepoURL": "https://github.com/gritzkoo/gitops",
     "srcTargetRevision": "",
     "labels": null
 }
