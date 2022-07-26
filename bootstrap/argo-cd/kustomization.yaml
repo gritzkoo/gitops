@@ -11,6 +11,25 @@ configMapGenerator:
       usernameSecret:
         key: git_username
         name: autopilot-secret
+  - |
+    repositories=- type: helm
+      name: helm-charts
+      url: https://dafiti-group.github.io/helm-charts
+      passwordSecret:
+        key: password
+        name: argocd-repositories-secrets
+      usernameSecret:
+        key: username
+        name: argocd-repositories-secrets
+    - type: git
+      url: https://github.com/dafiti-group/helm-charts
+      passwordSecret:
+        key: password
+        name: argocd-repositories-secrets
+      usernameSecret:
+        key: username
+        name: argocd-repositories-secrets
+
   name: argocd-cm
 kind: Kustomization
 namespace: argocd
