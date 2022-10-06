@@ -53,7 +53,9 @@ spec:
                   - values.yaml
                 values: |-
                   {{ helm.values }}
-            syncPolicy: {{ syncPolicy }}
+            syncPolicy:
+              automated:
+                allowEmpty: false
                 
   syncPolicy: {}
   template:
