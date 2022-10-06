@@ -19,4 +19,6 @@ helm:
       - name: MYSQL_DATABASE
         value: testing
     probes: null
-AAAallowEmpty: false
+syncPolicy:
+  automated:
+    allowEmpty: true

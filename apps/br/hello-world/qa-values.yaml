@@ -13,4 +13,6 @@ helm:
     image:
       repository: httpd
       tag: "alpine3.16"
-AAAallowEmpty: false
+syncPolicy:
+  automated:
+    allowEmpty: true

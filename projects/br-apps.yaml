@@ -53,9 +53,7 @@ spec:
                   - values.yaml
                 values: |-
                   {{ helm.values }}
-            # syncPolicy:
-            #   automated:
-            #     allowEmpty: {{ AAAallowEmpty }}
+            syncPolicy: {{ syncPolicy }}
                 
   syncPolicy: {}
   template:
@@ -81,7 +79,7 @@ spec:
         targetRevision: "{{ srcTargetRevision }}"
       syncPolicy:
         automated:
-          allowEmpty: {{ AAAallowEmpty }}
+          allowEmpty: true
           prune: true
           selfHeal: true
         syncOptions:
