@@ -55,7 +55,7 @@ spec:
                   {{ helm.values }}
             syncPolicy:
               automated:
-                allowEmpty: '{{ AAAallowEmpty }}'
+                allowEmpty: {{ AAAallowEmpty }}
                 
   syncPolicy: {}
   template:
