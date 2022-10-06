@@ -82,7 +82,7 @@ spec:
             syncPolicy:
               automated:
                 allowEmpty: false
-                prune: {{ sovaiprune }}
+                prune: '{{ sovaiprune }}'
                 selfHeal: false
               syncOptions:
                 - CreateNamespace=true
