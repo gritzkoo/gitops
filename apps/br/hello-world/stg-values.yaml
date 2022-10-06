@@ -10,5 +10,3 @@ helm:
   values: |-
     fullnameOverride: test-chart
     namespace: nginx-stg
-
-banana: false

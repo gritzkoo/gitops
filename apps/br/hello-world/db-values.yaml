@@ -19,4 +19,3 @@ helm:
       - name: MYSQL_DATABASE
         value: testing
     probes: null
-banana: false

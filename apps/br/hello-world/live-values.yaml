@@ -13,5 +13,3 @@ helm:
     image:
       repository: nginx
       tag: "alpine"
-
-banana: false
