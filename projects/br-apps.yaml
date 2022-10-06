@@ -53,6 +53,32 @@ spec:
                   - values.yaml
                 values: |-
                   {{ helm.values }}
+    - git:
+        files:
+          - path: apps/br/**/*-lalala.yaml
+        repoURL: https://github.com/gritzkoo/gitops.git
+        requeueAfterSeconds: 20
+        revision: ""
+        template:
+          metadata: {}
+          spec:
+            destination: {}
+            project: ""
+            source:
+              repoURL: ""
+              chart: "{{ helm.chart }}"
+              helm:
+                valueFiles:
+                  - values.yaml
+                values: |-
+                  {{ helm.values }}
+            syncPolicy:
+              automated:
+                allowEmpty: false
+                prune: false
+                selfHeal: false
+              syncOptions:
+                - CreateNamespace=true 
   syncPolicy: {}
   template:
     metadata:
