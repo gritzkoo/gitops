@@ -13,3 +13,4 @@ helm:
     image:
       repository: httpd
       tag: "alpine3.16"
+AAAallowEmpty: false

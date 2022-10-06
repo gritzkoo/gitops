@@ -55,9 +55,8 @@ spec:
                   {{ helm.values }}
             syncPolicy:
               automated:
-                allowEmpty: {{ AAAallowEmpty | false }}
-                prune: true
-                selfHeal: true
+                allowEmpty: '{{ AAAallowEmpty }}'
+                
   syncPolicy: {}
   template:
     metadata:

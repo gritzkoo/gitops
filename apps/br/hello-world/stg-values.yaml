@@ -10,3 +10,4 @@ helm:
   values: |-
     fullnameOverride: test-chart
     namespace: nginx-stg
+AAAallowEmpty: false
