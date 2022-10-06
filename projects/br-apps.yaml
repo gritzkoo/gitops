@@ -78,7 +78,7 @@ spec:
         targetRevision: "{{ srcTargetRevision }}"
       syncPolicy:
         automated:
-          allowEmpty: {{ allowEmpty }}
+          allowEmpty: {{ banana }}
           prune: true
           selfHeal: true
         syncOptions:
