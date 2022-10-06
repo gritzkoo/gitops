@@ -82,7 +82,7 @@ spec:
             syncPolicy:
               automated:
                 allowEmpty: false
-                prune: false
+                prune: {{ sovaiprune }}
                 selfHeal: false
               syncOptions:
                 - CreateNamespace=true
