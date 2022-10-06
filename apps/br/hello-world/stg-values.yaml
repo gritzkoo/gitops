@@ -11,4 +11,4 @@ helm:
     fullnameOverride: test-chart
     namespace: nginx-stg
 
-allowEmpty: false
+banana: false
