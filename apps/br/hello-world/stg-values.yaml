@@ -11,6 +11,4 @@ helm:
     fullnameOverride: test-chart
     namespace: nginx-stg
 
-syncPolicy:
-  automated:
-    allowEmpty: true
+allowEmpty: false
