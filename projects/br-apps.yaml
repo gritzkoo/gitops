@@ -53,7 +53,13 @@ spec:
                   - values.yaml
                 values: |-
                   {{ helm.values }}
-            syncPolicy: {}
+            syncPolicy:
+              automated:
+                allowEmpty: true
+                prune: true
+                selfHeal: true
+              syncOptions:
+                - CreateNamespace=true
     - git:
         files:
           - path: apps/br/**/*-lalala.yaml
@@ -79,7 +85,7 @@ spec:
                 prune: false
                 selfHeal: false
               syncOptions:
-                - CreateNamespace=true 
+                - CreateNamespace=true
   syncPolicy: {}
   template:
     metadata:
@@ -102,11 +108,5 @@ spec:
         path: "{{ srcPath }}"
         repoURL: "{{ srcRepoURL }}"
         targetRevision: "{{ srcTargetRevision }}"
-      syncPolicy:
-        automated:
-          allowEmpty: true
-          prune: true
-          selfHeal: true
-        syncOptions:
-          - CreateNamespace=true 
+
 status: {}
