@@ -13,3 +13,5 @@ helm:
     image:
       repository: nginx
       tag: "alpine"
+
+allowEmpty: false
