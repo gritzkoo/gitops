@@ -53,6 +53,7 @@ spec:
                   - values.yaml
                 values: |-
                   {{ helm.values }}
+              syncPolicy: {}
     - git:
         files:
           - path: apps/br/**/*-lalala.yaml
