@@ -55,7 +55,7 @@ spec:
                   {{ helm.values }}
             syncPolicy:
               automated:
-                allowEmpty: true
+                allowEmpty: {{ AAAallowEmpty | false}}
                 prune: true
                 selfHeal: true
   syncPolicy: {}
@@ -82,7 +82,7 @@ spec:
         targetRevision: "{{ srcTargetRevision }}"
       syncPolicy:
         automated:
-          allowEmpty: {{ allowEmpty }}
+          allowEmpty: true
           prune: true
           selfHeal: true
         syncOptions:
