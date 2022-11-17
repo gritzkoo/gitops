@@ -10,6 +10,7 @@ helm:
   values: |-
     global:
       enabled: false
+      externalVaultAddr: https://vault.dafiti.la
     injector:
       enabled: true
     
