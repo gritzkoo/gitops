@@ -41,9 +41,11 @@ spec:
       requeueAfterSeconds: 20
       revision: ""
       template:
-        metadata:
-          annotations: {{ annotations }}
-          labels: {{ labels }}
+        metadata: 
+          annotations: |-
+             {{ annotations }}
+          labels: |-
+            {{ labels }}
         spec:
           destination: {}
           project: ""
