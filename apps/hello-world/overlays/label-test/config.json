@@ -6,6 +6,10 @@
   "srcPath": "apps/hello-world/overlays/label-test",
   "srcRepoURL": "https://github.com/gritzkoo/gitops.git",
   "srcTargetRevision": "",
-  "labels": null,
-  "annotations": null
+  "labels": {
+    "app-group": "my-groyp"
+  },
+  "annotations": {
+    "custon-anot": "is-valid"
+  }
 }
