@@ -33,6 +33,7 @@ metadata:
   name: label-test
   namespace: argocd
 spec:
+  goTemplate: true
   generators:
     - git:
         files:
@@ -41,7 +42,8 @@ spec:
         requeueAfterSeconds: 20
         revision: ""
         template:
-          metadata: {}
+          metadata:
+            labels: {{ .labels | toYaml | nident 14 }}
           spec:
             destination: {}
             project: ""
