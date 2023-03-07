@@ -42,9 +42,9 @@ spec:
       revision: ""
       template:
         metadata: 
-          annotations: |-
+          annotations: 
              {{ annotations }}
-          labels: |-
+          labels: 
             {{ labels }}
         spec:
           destination: {}
