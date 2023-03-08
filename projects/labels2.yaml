@@ -42,7 +42,9 @@ spec:
         requeueAfterSeconds: 20
         revision: ""
         template:
-          metadata: {}
+          metadata:
+            labels:
+              oi: aqui
           spec:
             destination: {}
             project: ""
