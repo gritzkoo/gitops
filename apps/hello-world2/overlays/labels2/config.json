@@ -7,7 +7,7 @@
   "srcRepoURL": "https://github.com/gritzkoo/gitops.git",
   "srcTargetRevision": "",
   "labels": {
-    "oi": "aqui"
+    "custom_label": "payments"
   },
   "annotations": null
 }
