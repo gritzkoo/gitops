@@ -33,6 +33,7 @@ metadata:
   name: labels2
   namespace: argocd
 spec:
+  goTemplate: true
   generators:
     - git:
         files:
@@ -42,7 +43,7 @@ spec:
         revision: ""
         template:
           metadata:
-            labels: {{ labels }}
+            labels: {{ .labels }}
           spec:
             destination: {}
             project: ""
