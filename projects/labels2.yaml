@@ -43,8 +43,7 @@ spec:
         revision: ""
         template:
           metadata:
-            labels:
-              "{{ .labels }}"
+            labels: {{ .labels }}
           spec:
             destination: {}
             project: ""
