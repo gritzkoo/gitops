@@ -44,7 +44,7 @@ spec:
         template:
           metadata:
             labels:
-              {{ .labels }}
+              "{{ .labels }}"
           spec:
             destination: {}
             project: ""
