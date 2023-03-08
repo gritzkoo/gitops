@@ -44,7 +44,7 @@ spec:
         template:
           metadata:
             labels:
-              oi: aqui
+              oiss: lalala
           spec:
             destination: {}
             project: ""
