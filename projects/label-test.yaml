@@ -43,7 +43,7 @@ spec:
         revision: ""
         template:
           metadata:
-            labels: {{ .labels | toYaml | nident 14 }}
+            labels: {{ .labels }}
           spec:
             destination: {}
             project: ""
