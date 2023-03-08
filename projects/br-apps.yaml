@@ -56,8 +56,8 @@ spec:
             syncPolicy:
               automated:
                 allowEmpty: true
-                prune: false
-                selfHeal: false
+                prune: true
+                selfHeal: true
               syncOptions:
                 - CreateNamespace=true
     - git:
@@ -81,9 +81,9 @@ spec:
                   {{ helm.values }}
             syncPolicy:
               automated:
-                allowEmpty: false
-                prune: false
-                selfHeal: false
+                allowEmpty: true
+                prune: true
+                selfHeal: true
               syncOptions:
                 - CreateNamespace=true
   syncPolicy: {}
