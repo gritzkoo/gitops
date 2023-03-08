@@ -43,7 +43,7 @@ spec:
         revision: ""
         template:
           metadata:
-            labels: {{ toYaml .labels }}
+            labels: {{ fromJson .labels }}
           spec:
             destination: {}
             project: ""
