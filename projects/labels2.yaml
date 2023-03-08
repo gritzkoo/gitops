@@ -72,7 +72,7 @@ spec:
       labels:
         app.kubernetes.io/managed-by: argocd-autopilot
         app.kubernetes.io/name: "{{ .appName }}"
-        {{.labels}}
+        {{ .labels | toYaml | nident 8 }}
       name: labels2-{{ .userGivenName }}
       namespace: argocd
     spec:
