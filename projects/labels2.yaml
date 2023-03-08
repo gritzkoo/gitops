@@ -72,7 +72,7 @@ spec:
       labels:
         app.kubernetes.io/managed-by: argocd-autopilot
         app.kubernetes.io/name: "{{ .appName }}"
-        custon_label: '{{default "default" .labels.custom_label}}'
+        custom_label: '{{default "default" .labels.custom_label}}'
       name: labels2-{{ .userGivenName }}
       namespace: argocd
     spec:
