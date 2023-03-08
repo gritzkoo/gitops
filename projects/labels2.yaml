@@ -44,7 +44,7 @@ spec:
         template:
           metadata:
             labels:
-              oiss: lalala
+              {{ .labels }}
           spec:
             destination: {}
             project: ""
