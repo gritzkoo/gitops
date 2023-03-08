@@ -6,8 +6,6 @@
   "srcPath": "apps/haha/overlays/labels2",
   "srcRepoURL": "https://github.com/gritzkoo/gitops.git",
   "srcTargetRevision": "",
-  "labels": {
-    "custom_label": "automation"
-  },
+  "labels": null,
   "annotations": null
 }
