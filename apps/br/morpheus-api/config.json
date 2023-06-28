@@ -1,0 +1,8 @@
+{
+    "appName": "morpheus-api",
+    "userGivenName": "morpheus-api",
+    "destNamespace": "morpheus-api",
+    "srcPath": "apps/br/morpheus-api",
+    "srcRepoURL": "https://github.com/gritzkoo/gitops.git",
+    "srcTargetRevision": ""
+}

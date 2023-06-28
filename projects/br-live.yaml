@@ -6,13 +6,13 @@ metadata:
     argocd.argoproj.io/sync-options: PruneLast=true
     argocd.argoproj.io/sync-wave: "-2"
   creationTimestamp: null
-  name: labels2
+  name: br-live
   namespace: argocd
 spec:
   clusterResourceWhitelist:
     - group: "*"
       kind: "*"
-  description: labels2 project
+  description: br-live project
   destinations:
     - namespace: "*"
       server: "*"
@@ -30,14 +30,14 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "0"
   creationTimestamp: null
-  name: labels2
+  name: br-live
   namespace: argocd
 spec:
   goTemplate: true
   generators:
     - git:
         files:
-          - path: apps/**/labels2/config.json
+          - path: apps/br/**/config.json
         repoURL: https://github.com/gritzkoo/gitops.git
         requeueAfterSeconds: 20
         revision: ""
@@ -48,24 +48,24 @@ spec:
             project: ""
             source:
               repoURL: ""
-    - git:
-        files:
-          - path: apps/**/labels2/config_dir.json
-        repoURL: https://github.com/gritzkoo/gitops.git
-        requeueAfterSeconds: 20
-        revision: ""
-        template:
-          metadata: {}
-          spec:
-            destination: {}
-            project: ""
-            source:
-              directory:
-                exclude: "{{ exclude }}"
-                include: "{{ include }}"
-                jsonnet: {}
-                recurse: true
-              repoURL: ""
+    # - git:
+    #     files:
+    #       - path: apps/**/br-live/config_dir.json
+    #     repoURL: https://github.com/gritzkoo/gitops.git
+    #     requeueAfterSeconds: 20
+    #     revision: ""
+    #     template:
+    #       metadata: {}
+    #       spec:
+    #         destination: {}
+    #         project: ""
+    #         source:
+    #           directory:
+    #             exclude: "{{ exclude }}"
+    #             include: "{{ include }}"
+    #             jsonnet: {}
+    #             recurse: true
+    #           repoURL: ""
   syncPolicy: {}
   template:
     metadata:
@@ -73,7 +73,7 @@ spec:
         app.kubernetes.io/managed-by: argocd-autopilot
         app.kubernetes.io/name: "{{ .appName }}"
         custom_label: '{{default "default" .labels.custom_label}}'
-      name: labels2-{{ .userGivenName }}
+      name: "{{ .userGivenName }}-br-live"
       namespace: argocd
     spec:
       destination:
@@ -84,7 +84,7 @@ spec:
           jsonPointers:
             - /status
           kind: Application
-      project: labels2
+      project: br-live
       source:
         path: "{{ .srcPath }}"
         repoURL: "{{ .srcRepoURL }}"
@@ -94,4 +94,6 @@ spec:
           allowEmpty: true
           prune: true
           selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
 status: {}
