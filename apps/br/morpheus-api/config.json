@@ -4,5 +4,6 @@
     "destNamespace": "morpheus-api",
     "srcPath": "apps/br/morpheus-api",
     "srcRepoURL": "https://github.com/gritzkoo/gitops.git",
-    "srcTargetRevision": ""
+    "srcTargetRevision": "",
+    "destServer": "https://kubernetes.default.svc"
 }
