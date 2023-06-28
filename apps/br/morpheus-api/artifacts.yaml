@@ -26,11 +26,19 @@ kubernetes apiVersion: v1
 kind: Service
 metadata:
   name: morpheus-api
+  labels:
+    app: morpheus-api
+    version: v1
 spec:
   selector:
     app: morpheus-api
   ports:
-    - port: 80
+    - name: http
+      protocol: TCP
+      port: 80
       targetPort: 80
-    - port: 3000
+    - name: socket
+      protocol: TCP
+      port: 3000
       targetPort: 3000
+    
