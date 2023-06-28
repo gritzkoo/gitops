@@ -18,6 +18,57 @@ spec:
             limits:
               memory: "128Mi"
               cpu: "500m"
+          env:
+            - name: NODE_ENV
+              value: "development"
+            - name: TYPEORM_DEBUG
+              value: "true"
+            - name: DB_HOST
+              value: "postgres"
+            - name: DB_PORT
+              value: "5432"
+            - name: DB_USERNAME
+              value: "postgres"
+            - name: DB_PASSWORD
+              value: "postgres"
+            - name: DB_NAME
+              value: "morpheus"
+            - name: API_PORT
+              value: "80"
+            - name: SOCKET_PORT
+              value: "3000"
+            - name: TZ
+              value: "America/Sao_Paulo"
+            - name: FIREBASE_PREFIX
+              value: "_devgses"
+            - name: FIREBASE_PROJECT_ID
+              value: "morpheus-ws"
+            - name: FIREBASE_PRIVATE_KEY
+              value: "${MORPHEUS_FIREBASE_CRT}"
+            - name: FIREBASE_CLIENT_EMAIL
+              value: "firebase-adminsdk-r5ax7@morpheus-ws.iam.gserviceaccount.com"
+            - name: FIREBASE_DATABASE_URL
+              value: "https://morpheus-ws-default-rtdb.firebaseio.com"
+            - name: FIREBASE_API_URL
+              value: "https://identitytoolkit.googleapis.com"
+            - name: FIREBASE_API_TOKEN
+              value: "AIzaSyDBKYk-QwUVLWHV-vTZORV6Ez8Cm8v8X-g"
+            - name: JWT_SECRET
+              value: "L0C4S))P&R$3LR3TT"
+            - name: JWT_TTL
+              value: "86400S"
+            - name: TWILIO_ACCOUNT_SID
+              value: "AC5f2a43791239c196c48cee41ea6876c2"
+            - name: TWILIO_AUTH_TOKEN
+              value: "c59e76b7ff2d75b00a6ae674e51a4674"
+            - name: TWILIO_PHONE
+              value: "+12543555341"
+            - name: FLIGHTRADAR24_HOST
+              value: "https://data-cloud.flightradar24.com"
+            - name: FLIGHTRADAR_WWW_HOST
+              value: "https://www.flightradar24.com"
+            - name: MAX_REPORT_DATE_GAP
+              value: "365"
           ports:
             - containerPort: 80
             - containerPort: 3000
@@ -41,4 +92,3 @@ spec:
       protocol: TCP
       port: 3000
       targetPort: 3000
-    
