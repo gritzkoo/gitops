@@ -13,15 +13,12 @@ spec:
         app: morpheus-api
     spec:
       containers:
-        - name: busybox
-          image: alpine:latest
+        - name: tester
+          image: ubuntu:latest
           resources:
             limits:
-              cpu: 100m
-              memory: 100Mi
-          command:
-            - /bin/sh
-            - -c 'sleep 8000'
+              cpu: 300m
+              memory: 300Mi
         - name: postgres
           image: postgres:latest
           resources:
