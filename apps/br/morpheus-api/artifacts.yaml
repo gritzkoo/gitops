@@ -13,24 +13,24 @@ spec:
         app: morpheus-api
     spec:
       containers:
-        - name: postgres
-          image: postgres:latest
-          resources:
-            limits:
-              cpu: 1
-              memory: 1000Mi
-          ports:
-            - containerPort: 5432
-              name: postgres
-          env:
-            - name: POSTGRES_USER
-              value: postgres
-            - name: POSTGRES_PASSWORD
-              value: postgres
-            - name: POSTGRES_DB
-              value: morpheus
-            - name: TZ
-              value: America/Sao_Paulo
+        # - name: postgres
+        #   image: postgres:latest
+        #   resources:
+        #     limits:
+        #       cpu: 1
+        #       memory: 1000Mi
+        #   ports:
+        #     - containerPort: 5432
+        #       name: postgres
+        #   env:
+        #     - name: POSTGRES_USER
+        #       value: postgres
+        #     - name: POSTGRES_PASSWORD
+        #       value: postgres
+        #     - name: POSTGRES_DB
+        #       value: morpheus
+        #     - name: TZ
+        #       value: America/Sao_Paulo
         - name: morpheus-api
           image: morpheus-api:v1
           resources:
@@ -43,7 +43,7 @@ spec:
             - name: TYPEORM_DEBUG
               value: "true"
             - name: DB_HOST
-              value: "postgres"
+              value: "172.17.0.1"
             - name: DB_PORT
               value: "5432"
             - name: DB_USERNAME
