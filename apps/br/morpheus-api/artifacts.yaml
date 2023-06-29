@@ -13,6 +13,21 @@ spec:
         app: morpheus-api
     spec:
       containers:
+        - name: postgres
+          image: postgres:latest
+          resources:
+            limits:
+              cpu: 1
+              memory: 1000Mi
+          env:
+            - name: POSTGRES_USER
+              value: postgres
+            - name: POSTGRES_PASSWORD
+              value: postgres
+            - name: POSTGRES_DB
+              value: morpheus
+            - name: TZ
+              value: America/Sao_Paulo
         - name: morpheus-api
           image: morpheus-api:v1
           resources:
