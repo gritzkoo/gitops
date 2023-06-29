@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: tester
-          image: php-fpm:8.0-alpine
+          image: php:8.0-fpm-alpine
           resources:
             limits:
               cpu: 300m
