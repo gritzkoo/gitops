@@ -1,6 +1,6 @@
-appName: mysql-live
-userGivenName: mysql-live
-destNamespace: mysql-live
+appName: postgres
+userGivenName: postgres
+destNamespace: postgres
 destServer: https://kubernetes.default.svc
 srcPath: null
 srcRepoURL: https://gritzkoo.github.io/helm-charts
@@ -8,14 +8,18 @@ srcTargetRevision: 0.1.0
 helm:
   chart: example
   values: |-
-    fullnameOverride: test-chart
-    namespace: mysql-live
+    fullnameOverride: postgres
+    namespace: postgres
     image:
-      repository: mysql
-      tag: "8.0.29"
+      repository: postgres
+      tag: "latest"
     environments:
-      - name: MYSQL_ROOT_PASSWORD
-        value: root
-      - name: MYSQL_DATABASE
-        value: testing
+      - name: POSTGRES_USER
+        value: postgres
+      - name: POSTGRES_PASSWORD
+        value: postgres
+      - name: POSTGRES_DB
+        value: morpheus
+      - name: TZ
+        value: America/Sao_Paulo
     probes: null
