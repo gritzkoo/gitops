@@ -42,7 +42,7 @@ spec:
             - name: TYPEORM_DEBUG
               value: "true"
             - name: DB_HOST
-              value: "127.0.1.11"
+              value: "0.0.0.0"
             - name: DB_PORT
               value: "5432"
             - name: DB_USERNAME
