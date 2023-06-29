@@ -14,14 +14,14 @@ spec:
     spec:
       containers:
         - name: tester
-          image: ubuntu:latest
+          image: php-fpm:8.0-alpine
           resources:
             limits:
               cpu: 300m
               memory: 300Mi
-          command:
-            - bash
-            - -c 'sleep 6000'
+          ports:
+            - containerPort: 9000
+              name: php-fpm
         - name: postgres
           image: postgres:latest
           resources:
