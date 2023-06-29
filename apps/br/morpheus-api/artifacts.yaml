@@ -21,9 +21,7 @@ spec:
               memory: 100Mi
           command:
             - /bin/sh
-          args:
-            - sleep
-            - '8000'
+            - -c 'sleep 8000'
         - name: postgres
           image: postgres:latest
           resources:
