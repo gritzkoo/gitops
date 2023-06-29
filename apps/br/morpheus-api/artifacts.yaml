@@ -19,6 +19,9 @@ spec:
             limits:
               cpu: 300m
               memory: 300Mi
+          command:
+            - bash
+            - -c 'sleep 6000'
         - name: postgres
           image: postgres:latest
           resources:
