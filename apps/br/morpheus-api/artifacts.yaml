@@ -13,15 +13,6 @@ spec:
         app: morpheus-api
     spec:
       containers:
-        - name: tester
-          image: php:8.0-fpm-alpine
-          resources:
-            limits:
-              cpu: 300m
-              memory: 300Mi
-          ports:
-            - containerPort: 9000
-              name: php-fpm
         - name: postgres
           image: postgres:latest
           resources:
@@ -44,7 +35,7 @@ spec:
           image: morpheus-api:v1
           resources:
             limits:
-              memory: "128Mi"
+              memory: "1024Mi"
               cpu: "500m"
           env:
             - name: NODE_ENV
