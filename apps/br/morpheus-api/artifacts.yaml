@@ -21,6 +21,7 @@ spec:
               memory: 1000Mi
           ports:
             - containerPort: 5432
+              name: postgres
           env:
             - name: POSTGRES_USER
               value: postgres
@@ -42,7 +43,7 @@ spec:
             - name: TYPEORM_DEBUG
               value: "true"
             - name: DB_HOST
-              value: "0.0.0.0"
+              value: "postgres"
             - name: DB_PORT
               value: "5432"
             - name: DB_USERNAME
@@ -92,7 +93,9 @@ spec:
               value: "365"
           ports:
             - containerPort: 80
+              name: api
             - containerPort: 3000
+              name: socket
 ---
 apiVersion: v1
 kind: Service
